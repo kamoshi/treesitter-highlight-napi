@@ -1,29 +1,28 @@
 {
-  "name": "xd",
+  "name": "treesitter",
   "version": "0.0.0",
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
-    "name": "xd",
-    "triples": {}
+    "name": "treesitter",
+    "triples": {
+      "defaults": false
+    }
   },
   "license": "MIT",
   "devDependencies": {
-    "@napi-rs/cli": "^2.18.0",
-    "ava": "^6.0.1"
-  },
-  "ava": {
-    "timeout": "3m"
+    "@napi-rs/cli": "^2.18.0"
   },
   "engines": {
     "node": ">= 10"
   },
   "scripts": {
     "artifacts": "napi artifacts",
-    "build": "napi build --platform --release",
-    "build:debug": "napi build --platform",
+    "build": "napi build --platform --js false --release",
+    "debug": "napi build --platform --js false",
     "prepublishOnly": "napi prepublish -t npm",
     "universal": "napi universal",
     "version": "napi version"
-  }
+  },
+  "type": "module"
 }
